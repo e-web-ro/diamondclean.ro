@@ -1,76 +1,91 @@
 'use client';
-import { Phone, Mail, Clock } from 'lucide-react';
+import { Phone, Mail, Clock, MapPin, Send } from 'lucide-react';
 
 export default function Contact() {
     return (
-        <section id="contact" className="section section-bg">
+        <section id="contact" className="section relative">
+            <div className="absolute top-0 left-0 w-full h-1/2 bg-slate-50 -z-10"></div>
             <div className="container">
-                <div className="grid grid-cols-1 grid-cols-2" style={{ gap: '4rem', alignItems: 'start' }}>
+                <div className="text-center mb-16">
+                    <span className="text-accent font-semibold tracking-wider uppercase text-sm mb-2 block">Contact</span>
+                    <h2>Intră în Legătură cu Noi</h2>
+                    <p className="text-muted max-w-xl mx-auto">
+                        Ești gata pentru o curățenie de diamant? Contactează-ne pentru o ofertă personalizată sau orice întrebare.
+                    </p>
+                </div>
 
-                    <div>
-                        <h2 className="mb-2">Contactează-ne</h2>
-                        <p className="mb-4" style={{ color: 'var(--text-light)' }}>
-                            Suntem aici să te ajutăm! Cere o ofertă gratuită sau programează o curățenie.
-                        </p>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
 
-                        <div className="flex flex-col gap-4">
-                            <div className="card flex items-center gap-4" style={{ padding: '1.5rem', flexDirection: 'row', alignItems: 'center' }}>
-                                <div className="text-accent"><Phone size={24} /></div>
-                                <div>
-                                    <h4 style={{ fontSize: '0.9rem', color: 'var(--text-light)', marginBottom: 0 }}>Telefon</h4>
-                                    <a href="tel:0700000000" style={{ fontWeight: 'bold', fontSize: '1.1rem' }}>07xx.xxx.xxx</a>
-                                </div>
+                    {/* Contact Info */}
+                    <div className="flex flex-col gap-6">
+                        <div className="card flex items-start gap-4 p-6 hover:-translate-y-1 transition-transform">
+                            <div className="bg-primary/10 p-3 rounded-lg text-primary shrink-0">
+                                <Phone className="w-6 h-6" />
                             </div>
-
-                            <div className="card flex items-center gap-4" style={{ padding: '1.5rem', flexDirection: 'row', alignItems: 'center' }}>
-                                <div className="text-accent"><Mail size={24} /></div>
-                                <div>
-                                    <h4 style={{ fontSize: '0.9rem', color: 'var(--text-light)', marginBottom: 0 }}>Email</h4>
-                                    <a href="mailto:contact@diamondclean.ro" style={{ fontWeight: 'bold', fontSize: '1.1rem' }}>contact@diamondclean.ro</a>
-                                </div>
+                            <div>
+                                <h4 className="text-lg font-bold mb-1">Telefon</h4>
+                                <p className="text-muted text-sm mb-2">Luni -Duminică, 08:00 - 20:00</p>
+                                <a href="tel:0774494671" className="text-xl font-bold text-accent hover:text-primary transition-colors">0774.494.671</a>
                             </div>
+                        </div>
 
-                            <div className="card flex items-center gap-4" style={{ padding: '1.5rem', flexDirection: 'row', alignItems: 'center' }}>
-                                <div className="text-accent"><Clock size={24} /></div>
-                                <div>
-                                    <h4 style={{ fontSize: '0.9rem', color: 'var(--text-light)', marginBottom: 0 }}>Program</h4>
-                                    <p style={{ fontWeight: 'bold' }}>Luni - Sâmbătă: 08:00 - 20:00</p>
-                                </div>
+                        <div className="card flex items-start gap-4 p-6 hover:-translate-y-1 transition-transform">
+                            <div className="bg-primary/10 p-3 rounded-lg text-primary shrink-0">
+                                <Mail className="w-6 h-6" />
+                            </div>
+                            <div>
+                                <h4 className="text-lg font-bold mb-1">Email</h4>
+                                <p className="text-muted text-sm mb-2">Răspundem în maxim 24h</p>
+                                <a href="mailto:contact@diamondclean.ro" className="text-lg font-bold text-accent hover:text-primary transition-colors">contact@diamondclean.ro</a>
+                            </div>
+                        </div>
+
+                        <div className="card flex items-start gap-4 p-6 hover:-translate-y-1 transition-transform">
+                            <div className="bg-primary/10 p-3 rounded-lg text-primary shrink-0">
+                                <MapPin className="w-6 h-6" />
+                            </div>
+                            <div>
+                                <h4 className="text-lg font-bold mb-1">Acoperire</h4>
+                                <p className="text-muted">Deservim tot Bucureștiul și Județul Ilfov.</p>
                             </div>
                         </div>
                     </div>
 
-                    <div className="card">
-                        <h3 className="mb-4">Trimite un mesaj</h3>
-                        <form style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                            <div>
-                                <label style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.9rem', fontWeight: 600 }}>Nume</label>
-                                <input type="text" placeholder="Numele tău" style={{
-                                    width: '100%', padding: '0.75rem', borderRadius: 'var(--radius)', border: '1px solid #e2e8f0', fontFamily: 'inherit'
-                                }} />
+                    {/* Contact Form */}
+                    <div className="card p-8 lg:p-10 shadow-xl border-t-4 border-accent">
+                        <h3 className="mb-6">Trimite un Mesaj</h3>
+                        <form className="flex flex-col gap-4">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label className="block text-sm font-semibold mb-2">Nume</label>
+                                    <input type="text" placeholder="Numele tău" className="w-full p-3 rounded-lg border border-slate-200 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all" />
+                                </div>
+                                <div>
+                                    <label className="block text-sm font-semibold mb-2">Telefon</label>
+                                    <input type="tel" placeholder="07xx..." className="w-full p-3 rounded-lg border border-slate-200 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all" />
+                                </div>
                             </div>
+
                             <div>
-                                <label style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.9rem', fontWeight: 600 }}>Telefon</label>
-                                <input type="tel" placeholder="Număr de telefon" style={{
-                                    width: '100%', padding: '0.75rem', borderRadius: 'var(--radius)', border: '1px solid #e2e8f0', fontFamily: 'inherit'
-                                }} />
-                            </div>
-                            <div>
-                                <label style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.9rem', fontWeight: 600 }}>Serviciu Dorit</label>
-                                <select style={{ width: '100%', padding: '0.75rem', borderRadius: 'var(--radius)', border: '1px solid #e2e8f0', fontFamily: 'inherit' }}>
-                                    <option>Curățare Canapea</option>
+                                <label className="block text-sm font-semibold mb-2">Serviciu Dorit</label>
+                                <select className="w-full p-3 rounded-lg border border-slate-200 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all bg-white">
+                                    <option>Selectează un serviciu...</option>
+                                    <option>Curățare Canapele</option>
                                     <option>Curățenie Generală</option>
                                     <option>Curățenie Birou</option>
+                                    <option>Curățenie După Constructor</option>
                                     <option>Altul</option>
                                 </select>
                             </div>
+
                             <div>
-                                <label style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.9rem', fontWeight: 600 }}>Mesaj</label>
-                                <textarea rows="4" placeholder="Detalii despre suprafață, locație, etc." style={{
-                                    width: '100%', padding: '0.75rem', borderRadius: 'var(--radius)', border: '1px solid #e2e8f0', fontFamily: 'inherit', resize: 'vertical'
-                                }}></textarea>
+                                <label className="block text-sm font-semibold mb-2">Mesaj</label>
+                                <textarea rows="4" placeholder="Detalii despre locație,mp, etc." className="w-full p-3 rounded-lg border border-slate-200 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all resize-y"></textarea>
                             </div>
-                            <button type="button" className="btn btn-primary" style={{ width: '100%', marginTop: '1rem' }}>Trimite Cererea</button>
+
+                            <button type="button" className="btn btn-primary w-full mt-2 justify-center group">
+                                Trimite Cererea <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                            </button>
                         </form>
                     </div>
 
@@ -79,3 +94,4 @@ export default function Contact() {
         </section>
     );
 }
+
