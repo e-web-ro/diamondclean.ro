@@ -30,9 +30,9 @@ export default function Navbar() {
 
                 {/* Desktop Menu */}
                 <div className="nav-links items-center">
-                    <Link href="#acasa" className="nav-link">Acasă</Link>
-                    <Link href="#despre" className="nav-link">Despre Noi</Link>
-                    <Link href="#servicii" className="nav-link">Servicii</Link>
+                    <Link href="/" className="nav-link">Acasă</Link>
+                    <Link href="/despre-noi" className="nav-link">Despre Noi</Link>
+                    <Link href="/servicii" className="nav-link">Servicii</Link>
                     <div className="h-6 w-px bg-slate-200 mx-2"></div>
                     <a href="tel:0774494671" className="flex items-center gap-2 font-semibold text-primary hover:text-accent transition-colors">
                         <Phone size={18} />
@@ -59,9 +59,9 @@ export default function Navbar() {
                         className="absolute top-full left-0 right-0 bg-white border-b border-slate-100 shadow-xl overflow-hidden md:hidden"
                     >
                         <div className="flex flex-col p-6 gap-4">
-                            <Link href="#acasa" onClick={() => setIsOpen(false)} className="nav-link text-lg py-2 border-b border-slate-50">Acasă</Link>
-                            <Link href="#despre" onClick={() => setIsOpen(false)} className="nav-link text-lg py-2 border-b border-slate-50">Despre Noi</Link>
-                            <Link href="#servicii" onClick={() => setIsOpen(false)} className="nav-link text-lg py-2 border-b border-slate-50">Servicii</Link>
+                            <Link href="/" onClick={() => setIsOpen(false)} className="nav-link text-lg py-2 border-b border-slate-50">Acasă</Link>
+                            <Link href="/despre-noi" onClick={() => setIsOpen(false)} className="nav-link text-lg py-2 border-b border-slate-50">Despre Noi</Link>
+                            <Link href="/servicii" onClick={() => setIsOpen(false)} className="nav-link text-lg py-2 border-b border-slate-50">Servicii</Link>
                             <Link href="#contact" onClick={() => setIsOpen(false)} className="btn btn-primary w-full justify-center mt-2">
                                 Cere Ofertă Gratuită
                             </Link>

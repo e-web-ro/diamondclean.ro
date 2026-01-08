@@ -1,6 +1,7 @@
 'use client';
 import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles, Star, ShieldCheck, Clock } from 'lucide-react';
+import Link from 'next/link';
 
 export default function Hero() {
     return (
@@ -36,9 +37,9 @@ export default function Hero() {
                             <a href="#contact" className="btn btn-primary btn-lg group">
                                 Solicita Ofertă <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                             </a>
-                            <a href="#servicii" className="btn btn-outline">
+                            <Link href="/servicii" className="btn btn-outline">
                                 Vezi Serviciile Noastre
-                            </a>
+                            </Link>
                         </div>
 
                         <div className="grid grid-cols-3 gap-6 pt-8 border-t border-slate-200">

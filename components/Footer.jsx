@@ -33,9 +33,9 @@ export default function Footer() {
                     <div>
                         <h4 className="text-white text-lg font-bold mb-6">Link-uri Rapide</h4>
                         <ul className="flex flex-col gap-3">
-                            <li><a href="#acasa" className="hover:text-accent transition-colors">Acasă</a></li>
-                            <li><a href="#despre" className="hover:text-accent transition-colors">Despre Noi</a></li>
-                            <li><a href="#servicii" className="hover:text-accent transition-colors">Servicii</a></li>
+                            <li><Link href="/" className="hover:text-accent transition-colors">Acasă</Link></li>
+                            <li><Link href="/despre-noi" className="hover:text-accent transition-colors">Despre Noi</Link></li>
+                            <li><Link href="/servicii" className="hover:text-accent transition-colors">Servicii</Link></li>
                             <li><a href="#contact" className="hover:text-accent transition-colors">Contact</a></li>
                         </ul>
                     </div>
@@ -44,10 +44,10 @@ export default function Footer() {
                     <div>
                         <h4 className="text-white text-lg font-bold mb-6">Servicii Populare</h4>
                         <ul className="flex flex-col gap-3">
-                            <li><a href="#servicii" className="hover:text-accent transition-colors">Curățare Canapele</a></li>
-                            <li><a href="#servicii" className="hover:text-accent transition-colors">Curățenie Generală</a></li>
-                            <li><a href="#servicii" className="hover:text-accent transition-colors">Curățenie Birouri</a></li>
-                            <li><a href="#servicii" className="hover:text-accent transition-colors">După Constructor</a></li>
+                            <li><Link href="/servicii#canapele" className="hover:text-accent transition-colors">Curățare Canapele</Link></li>
+                            <li><Link href="/servicii#generala" className="hover:text-accent transition-colors">Curățenie Generală</Link></li>
+                            <li><Link href="/servicii#birouri" className="hover:text-accent transition-colors">Curățenie Birouri</Link></li>
+                            <li><Link href="/servicii" className="hover:text-accent transition-colors">După Constructor</Link></li>
                         </ul>
                     </div>
 
