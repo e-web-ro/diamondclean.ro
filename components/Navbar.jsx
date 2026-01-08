@@ -38,7 +38,7 @@ export default function Navbar() {
                         <Phone size={18} />
                         0774.494.671
                     </a>
-                    <Link href="#contact" className="btn btn-primary ml-4 !py-2 !px-6">
+                    <Link href="/contact" className="btn btn-primary ml-4 !py-2 !px-6">
                         Cere Ofertă
                     </Link>
                 </div>
