@@ -21,30 +21,32 @@ export default function Navbar() {
     return (
         <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
             <div className="container nav-container">
-                <Link href="/" className="logo">
-                    <div className="bg-primary/10 p-2 rounded-lg">
+                <Link href="/" className="flex items-center gap-2 group">
+                    <div className="bg-primary/5 p-2 rounded-xl group-hover:bg-primary/10 transition-colors">
                         <Sparkles className="text-accent w-6 h-6" />
                     </div>
-                    <span className="text-xl tracking-tight">Diamond<span className="text-accent">Clean</span></span>
+                    <span className="text-xl font-bold tracking-tight text-primary">Diamond<span className="text-accent">Clean</span></span>
                 </Link>
 
                 {/* Desktop Menu */}
-                <div className="nav-links items-center">
+                <div className="nav-links">
                     <Link href="/" className="nav-link">Acasă</Link>
                     <Link href="/despre-noi" className="nav-link">Despre Noi</Link>
                     <Link href="/servicii" className="nav-link">Servicii</Link>
                     <div className="h-6 w-px bg-slate-200 mx-2"></div>
-                    <a href="tel:0774494671" className="flex items-center gap-2 font-semibold text-primary hover:text-accent transition-colors">
-                        <Phone size={18} />
+                    <a href="tel:0774494671" className="flex items-center gap-2 font-semibold text-primary hover:text-accent transition-colors px-2">
+                        <div className="bg-accent/10 p-1.5 rounded-full">
+                            <Phone size={16} className="text-accent" />
+                        </div>
                         0774.494.671
                     </a>
-                    <Link href="/contact" className="btn btn-primary ml-4 !py-2 !px-6">
+                    <Link href="/contact" className="btn btn-primary ml-4 !py-2.5 !px-6 text-sm">
                         Cere Ofertă
                     </Link>
                 </div>
 
                 {/* Mobile Menu Button */}
-                <button className="mobile-menu-btn p-2 hover:bg-slate-100 rounded-lg transition-colors" onClick={toggleMenu}>
+                <button className="mobile-menu-btn" onClick={toggleMenu} aria-label="Menu">
                     {isOpen ? <X size={24} /> : <Menu size={24} />}
                 </button>
             </div>
@@ -56,13 +58,21 @@ export default function Navbar() {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="absolute top-full left-0 right-0 bg-white border-b border-slate-100 shadow-xl overflow-hidden md:hidden"
+                        className="absolute top-20 left-0 right-0 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-xl overflow-hidden md:hidden z-40"
                     >
-                        <div className="flex flex-col p-6 gap-4">
-                            <Link href="/" onClick={() => setIsOpen(false)} className="nav-link text-lg py-2 border-b border-slate-50">Acasă</Link>
-                            <Link href="/despre-noi" onClick={() => setIsOpen(false)} className="nav-link text-lg py-2 border-b border-slate-50">Despre Noi</Link>
-                            <Link href="/servicii" onClick={() => setIsOpen(false)} className="nav-link text-lg py-2 border-b border-slate-50">Servicii</Link>
-                            <Link href="#contact" onClick={() => setIsOpen(false)} className="btn btn-primary w-full justify-center mt-2">
+                        <div className="flex flex-col p-6 gap-2">
+                            <Link href="/" onClick={() => setIsOpen(false)} className="px-4 py-3 rounded-lg hover:bg-slate-50 font-medium text-slate-700">Acasă</Link>
+                            <Link href="/despre-noi" onClick={() => setIsOpen(false)} className="px-4 py-3 rounded-lg hover:bg-slate-50 font-medium text-slate-700">Despre Noi</Link>
+                            <Link href="/servicii" onClick={() => setIsOpen(false)} className="px-4 py-3 rounded-lg hover:bg-slate-50 font-medium text-slate-700">Servicii</Link>
+
+                            <div className="my-2 border-t border-slate-100"></div>
+
+                            <a href="tel:0774494671" className="flex items-center gap-3 px-4 py-3 text-primary font-semibold">
+                                <Phone size={18} className="text-accent" />
+                                0774.494.671
+                            </a>
+
+                            <Link href="/contact" onClick={() => setIsOpen(false)} className="btn btn-primary w-full justify-center mt-2">
                                 Cere Ofertă Gratuită
                             </Link>
                         </div>
