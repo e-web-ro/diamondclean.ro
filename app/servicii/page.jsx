@@ -59,7 +59,7 @@ export default function ServiciiPage() {
                             <div className="absolute -inset-4 bg-gradient-to-r from-accent to-blue-600 rounded-2xl rotate-2 blur-lg opacity-30 group-hover:opacity-50 transition-opacity -z-10"></div>
                             <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/10">
                                 <Image
-                                    src="https://images.unsplash.com/photo-1632980121711-d142ca47dbe6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                    src="/images/cleaning_sofa_premium.png"
                                     alt="Curatare canapea"
                                     width={800}
                                     height={600}
@@ -79,7 +79,7 @@ export default function ServiciiPage() {
                             <div className="absolute -inset-4 bg-gradient-to-l from-secondary to-purple-600 rounded-2xl -rotate-2 blur-lg opacity-30 group-hover:opacity-50 transition-opacity -z-10"></div>
                             <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/10">
                                 <Image
-                                    src="https://images.unsplash.com/photo-1581578731117-104f2a41272c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                    src="/images/cleaning_general_premium.png"
                                     alt="Curatenie generala"
                                     width={800}
                                     height={600}
@@ -153,7 +153,7 @@ export default function ServiciiPage() {
                             <div className="absolute -inset-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl rotate-2 blur-lg opacity-30 group-hover:opacity-50 transition-opacity -z-10"></div>
                             <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/10">
                                 <Image
-                                    src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                    src="/images/cleaning_office_premium.png"
                                     alt="Curatenie birouri"
                                     width={800}
                                     height={600}
