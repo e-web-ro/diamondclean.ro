@@ -1,126 +1,121 @@
 'use client';
 import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles, Star, ShieldCheck, Clock, Phone } from 'lucide-react';
+import { ArrowRight, Sparkles, Star, ShieldCheck, Clock, CheckCircle } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Hero() {
     return (
-        <section id="acasa" className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-slate-50">
-            {/* Modern Gradient Background */}
-            <div className="absolute top-0 right-0 -z-10 w-[800px] h-[800px] bg-accent/10 rounded-full blur-3xl opacity-50 -translate-y-1/2 translate-x-1/2"></div>
-            <div className="absolute bottom-0 left-0 -z-10 w-[600px] h-[600px] bg-secondary/10 rounded-full blur-3xl opacity-50 translate-y-1/2 -translate-x-1/2"></div>
+        <section id="acasa" className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-primary">
+            {/* Animated Glow Background */}
+            <div className="absolute top-0 right-0 -z-10 w-[800px] h-[800px] bg-accent/20 rounded-full blur-[120px] opacity-40 animate-pulse-slow"></div>
+            <div className="absolute bottom-0 left-0 -z-10 w-[600px] h-[600px] bg-secondary/20 rounded-full blur-[120px] opacity-30 animate-pulse-slow"></div>
 
             <div className="container relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-center">
+
                     {/* Text Content */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
-                        className="text-center lg:text-left"
-                    >
+                    <div className="lg:w-1/2 text-center lg:text-left">
                         <motion.div
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ delay: 0.2 }}
-                            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 shadow-sm mb-8 text-sm font-semibold text-primary mx-auto lg:mx-0"
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6 }}
                         >
-                            <Star className="w-4 h-4 text-amber-400 fill-amber-400" />
-                            <span className="tracking-wide">Premium Cleaning Services</span>
+                            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-white/10 mb-8">
+                                <Sparkles className="w-4 h-4 text-accent animate-spin-slow" />
+                                <span className="text-sm font-semibold tracking-wide text-cyan-100">Premium Cleaning Services</span>
+                            </div>
+
+                            <h1 className="mb-6 leading-tight">
+                                Curățenie la Standarde <br />
+                                <span className="text-gradient">De Diamant</span>
+                            </h1>
+
+                            <p className="mb-10 text-lg md:text-xl text-slate-400 leading-relaxed max-w-xl mx-auto lg:mx-0">
+                                Experimentează perfecțiunea în curățenie. Soluții eco-friendly, echipamente de ultimă generație și o echipă dedicată confortului tău.
+                            </p>
+
+                            <div className="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start mb-12">
+                                <a href="#contact" className="btn btn-primary group">
+                                    Solicită Ofertă
+                                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                                </a>
+                                <Link href="/servicii" className="btn btn-outline group">
+                                    Descoperă Serviciile
+                                </Link>
+                            </div>
+
+                            <div className="flex items-center justify-center lg:justify-start gap-8 pt-8 border-t border-white/10">
+                                <div>
+                                    <div className="text-3xl font-bold text-white mb-1">500+</div>
+                                    <div className="text-xs text-slate-500 uppercase tracking-widest">Clienți</div>
+                                </div>
+                                <div className="w-px h-10 bg-white/10"></div>
+                                <div>
+                                    <div className="text-3xl font-bold text-white mb-1">100%</div>
+                                    <div className="text-xs text-slate-500 uppercase tracking-widest">Garanție</div>
+                                </div>
+                                <div className="w-px h-10 bg-white/10"></div>
+                                <div>
+                                    <div className="text-3xl font-bold text-white mb-1">24/7</div>
+                                    <div className="text-xs text-slate-500 uppercase tracking-widest">Suport</div>
+                                </div>
+                            </div>
                         </motion.div>
+                    </div>
 
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary mb-6 leading-[1.15] tracking-tight">
-                            Curățenie de <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-secondary">Diamant</span> <br className="hidden lg:block" />
-                            pentru Liniștea Ta
-                        </h1>
-
-                        <p className="mb-8 text-lg md:text-xl text-slate-600 max-w-lg mx-auto lg:mx-0 leading-relaxed">
-                            Transformăm orice spațiu într-un sanctuar de prospețime.
-                            Echipă verificată, soluții eco-friendly și garanția satisfacției 100%.
-                        </p>
-
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
-                            <a href="#contact" className="btn btn-primary btn-lg group shadow-accent/25">
-                                Solicită Ofertă
-                                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                            </a>
-                            <Link href="/servicii" className="btn btn-outline btn-lg group">
-                                Serviciile Noastre
-                            </Link>
-                        </div>
-
-                        {/* Stats Grid */}
-                        <div className="grid grid-cols-3 gap-8 py-8 border-t border-slate-200">
-                            <div>
-                                <div className="text-3xl font-bold text-primary mb-1">500+</div>
-                                <div className="text-sm text-slate-500 font-medium">Clienți Mulțumiți</div>
-                            </div>
-                            <div>
-                                <div className="text-3xl font-bold text-primary mb-1">100%</div>
-                                <div className="text-sm text-slate-500 font-medium">Garanție</div>
-                            </div>
-                            <div>
-                                <div className="text-3xl font-bold text-primary mb-1">24/7</div>
-                                <div className="text-sm text-slate-500 font-medium">Suport Rapid</div>
-                            </div>
-                        </div>
-                    </motion.div>
-
-                    {/* Hero Image Section */}
+                    {/* Hero Image / Visual */}
                     <motion.div
-                        initial={{ opacity: 0, x: 20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8 }}
-                        className="relative hidden md:block"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.8, delay: 0.2 }}
+                        className="lg:w-1/2 relative"
                     >
-                        <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl border-[6px] border-white ring-1 ring-slate-100">
-                            <img
-                                src="https://images.unsplash.com/photo-1581578731117-104f2a41272c?q=80&w=1000&auto=format&fit=crop"
-                                alt="Living room modern"
-                                className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-1000"
+                        <div className="relative z-10 rounded-3xl overflow-hidden border border-white/10 shadow-2xl group">
+                            <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent z-10"></div>
+                            <Image
+                                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1000&auto=format&fit=crop"
+                                alt="Luxury Clean Interior"
+                                width={1000}
+                                height={800}
+                                className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-1000"
+                                priority
                             />
 
-                            {/* Floating Badge 1 - Verified */}
+                            {/* Floating Elements */}
                             <motion.div
-                                initial={{ y: 20, opacity: 0 }}
-                                animate={{ y: 0, opacity: 1 }}
-                                transition={{ delay: 0.8, duration: 0.5 }}
-                                className="absolute bottom-8 left-8 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-white/50 max-w-xs"
+                                animate={{ y: [0, -10, 0] }}
+                                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                                className="absolute bottom-10 left-10 z-20 glass p-4 rounded-xl border border-white/20"
                             >
-                                <div className="flex items-start gap-3">
-                                    <div className="bg-green-100 p-2.5 rounded-xl text-green-600">
+                                <div className="flex items-center gap-3">
+                                    <div className="bg-green-500/20 p-2 rounded-lg text-green-400">
                                         <ShieldCheck className="w-6 h-6" />
                                     </div>
                                     <div>
-                                        <p className="font-bold text-sm text-primary">Personal Verificat</p>
-                                        <p className="text-xs text-slate-500 mt-0.5">Echipă de încredere și asigurată</p>
+                                        <p className="font-bold text-white">100% Asigurat</p>
+                                        <p className="text-xs text-slate-400">Personal Verificat</p>
                                     </div>
                                 </div>
                             </motion.div>
 
-                            {/* Floating Badge 2 - Support */}
                             <motion.div
-                                initial={{ y: -20, opacity: 0 }}
-                                animate={{ y: 0, opacity: 1 }}
-                                transition={{ delay: 1, duration: 0.5 }}
-                                className="absolute top-8 right-8 bg-white/95 backdrop-blur-md p-3 pr-5 rounded-full shadow-lg border border-white/50"
+                                animate={{ y: [0, 10, 0] }}
+                                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                                className="absolute top-10 right-10 z-20 glass p-3 rounded-lg border border-white/20"
                             >
                                 <div className="flex items-center gap-2">
-                                    <div className="bg-accent/10 p-1.5 rounded-full text-accent">
-                                        <Clock className="w-5 h-5" />
-                                    </div>
-                                    <span className="font-bold text-sm text-primary">Rapid & Eficient</span>
+                                    <Star className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+                                    <span className="font-bold text-white">5.0 Rating</span>
                                 </div>
                             </motion.div>
                         </div>
 
-                        {/* Decorative blobs */}
-                        <div className="absolute -top-12 -right-12 w-full h-full border-2 border-accent/20 rounded-3xl -z-10 translate-x-4 translate-y-4"></div>
-                        <div className="absolute -bottom-12 -left-12 w-full h-full bg-primary/5 rounded-3xl -z-20 -rotate-3"></div>
+                        {/* Decor */}
+                        <div className="absolute -top-10 -right-10 w-full h-full border-2 border-accent/20 rounded-3xl -z-10 translate-x-6 translate-y-6"></div>
                     </motion.div>
                 </div>
             </div>
         </section>
     );
 }
-
