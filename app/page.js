@@ -3,6 +3,7 @@ import Hero from '@/components/Hero';
 import Footer from '@/components/Footer';
 import { ArrowRight, Star, Shield, Users, Sparkles, Phone } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 // Simple Teaser Components for Landing Page
 function AboutTeaser() {
@@ -12,7 +13,13 @@ function AboutTeaser() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <div className="rounded-3xl overflow-hidden shadow-2xl border border-white/5 relative group">
             <div className="absolute inset-0 bg-accent/20 mix-blend-overlay z-10"></div>
-            <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Professional Team" className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700" />
+            <Image
+              src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+              alt="Professional Team"
+              width={800}
+              height={600}
+              className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
+            />
 
             <div className="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-primary to-transparent z-20">
               <div className="glass p-4 rounded-xl inline-block backdrop-blur-md border border-white/10">
@@ -79,7 +86,13 @@ function ServicesTeaser() {
           {/* Card 1 - Highlighted */}
           <div className="md:col-span-2 glass-card rounded-3xl overflow-hidden relative group min-h-[300px] flex flex-col justify-end p-8 border border-white/10 hover:border-accent/50 transition-colors">
             <div className="absolute inset-0 z-0">
-              <img src="https://images.unsplash.com/photo-1632980121711-d142ca47dbe6?w=1200&q=80" className="w-full h-full object-cover opacity-60 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700" alt="Sofa Cleaning" />
+              <Image
+                src="https://images.unsplash.com/photo-1632980121711-d142ca47dbe6?w=1200&q=80"
+                alt="Sofa Cleaning"
+                width={1000}
+                height={800}
+                className="w-full h-full object-cover opacity-60 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700"
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/80 to-transparent"></div>
             </div>
 
